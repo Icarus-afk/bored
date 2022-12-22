@@ -1,22 +1,27 @@
-from tkinter import * 
-from tkinter import messagebox
+import tkinter as tk
+from tkinter import END, Entry, messagebox
 import fetcher
 
-tkWindow = Tk()  
+tkWindow =tk.Tk()
 tkWindow.geometry('400x150')  
 tkWindow.title('BORED!')
 
-frame_1 = tkWindow.Frame(tkWindow, bg='#c4ffd2', width=400, height=50)
+entry=Entry(tkWindow, width= 70)
+entry.pack()
+
+frame_1 = tk.Frame(tkWindow, bg='#c4ffd2', width=400, height=50)
 frame_1.pack()
 frame_1.pack_propagate(0)
 
+def on_click(text):
+   entry.delete(0, END)
+   entry.insert(0,text)
 
-def showMsg():  
-    messagebox.showinfo('Message', 'You clicked the Submit button!')
-
-button = Button(tkWindow,
-	text = 'Submit',
-	command = fetcher.get_data())  
+button = tk.Button(tkWindow,
+	text = 'check',
+	command = on_click(fetcher.get_data()))  
 button.pack()  
+
+
   
 tkWindow.mainloop()
