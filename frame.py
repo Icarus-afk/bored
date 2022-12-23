@@ -21,7 +21,7 @@ button = tk.Button(tkWindow,
 )  
 val = button.invoke()
 button.pack()  
-my_label = Label(frame_1, bg='#c4ffd2',font=("Arial", 14),
+my_label = Label(frame_1, bg='#c4ffd2',font=("Arial", 12),
                  textvariable=get_string).pack(pady=10)
 
 tkWindow.mainloop()
